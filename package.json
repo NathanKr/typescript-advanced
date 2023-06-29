@@ -1,0 +1,23 @@
+{
+  "name": "typescript-advanced",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanKr/typescript-advanced.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanKr/typescript-advanced/issues"
+  },
+  "homepage": "https://github.com/NathanKr/typescript-advanced#readme",
+  "devDependencies": {
+    "vitest": "^0.32.2"
+  }
+}
