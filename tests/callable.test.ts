@@ -11,7 +11,6 @@ test("ICallable is ok with string", () => {
 
   // example usage
   expect(expected).toBe(actual);
-  const num = overloaded(123); // type of `num` is inferred as `number`
 });
 
 test("ICallable is ok with number", () => {
