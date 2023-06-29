@@ -1,14 +1,7 @@
 import { test, expect } from "vitest";
 import { stringOrNumber } from "../src/logic/callable";
-import { ICallable } from "../src/types/i-callable";
+import ICallable from "../src/types/i-callable";
 
-// test("create animal object using IAnimalShort is ok", () => {
-//   const animal: IAnimalShort = {
-//     makeSound: function (): void {},
-//   };
-
-//   expect(animal).toBeTruthy();
-// });
 
 test("ICallable is ok with string", () => {
   const overloaded: ICallable = stringOrNumber;
