@@ -1,6 +1,18 @@
 <h2>Motivation</h2>
 experiment with advanced typescript
 
+<h2>Setup</h2>
+
+```
+pnpm i
+```
+
+<h2>Usage</h2>
+
+```
+pnpm test
+```
+
 <h2>Demo</h2>
 <h3>Callable</h3>
 any one implementing this interface can be called with one of this signitures
