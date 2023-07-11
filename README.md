@@ -53,3 +53,37 @@ function makeObj(n: INewableWithString) {
     const expected = 'hello!'
     expect(expected).toBe(val.name)
 ```    
+
+<h3>Function as type is bad use class implementaing interface instead</h3>
+This is bad
+
+```ts
+  // --- func is of type OnDispatchResult but missing one argument
+  // --- yet no error
+  const func: OnDispatchResult = (res: unknown) => {
+    console.log(res);
+  };
+```
+
+This is good
+
+```ts
+interface IOnDispatchFunc {
+    operate(res: unknown, action: string): void; // type OnDispatchResult
+  }
+  class AAA implements IOnDispatchFunc {
+    operate(res: unknown, action: string): void {
+      console.log(res, action);
+    }
+  }
+
+  function callMe(obj: IOnDispatchFunc): void {
+    obj.operate(1, "hello");
+  }
+
+  const obj = new AAA();
+  const spy = vi.spyOn(console, "log");
+  callMe(obj);
+  expect(spy).toBeCalledWith(1, "hello");
+  expect(spy).toBeCalledTimes(1);
+```
