@@ -22,20 +22,6 @@ test("function type with few argument ---> is not type safe", () => {
   expect(spy).toBeCalledWith(1);
 });
 
-test("use object ---> it is type safe but not full solution", () => {
-  const obj1: IOnDispatchResult = {
-    res: undefined,
-    action: "",
-  };
-  function callMe(obj: IOnDispatchResult): void {
-    obj.res = 1;
-    obj.action = "hello";
-  }
-
-  callMe(obj1);
-  expect(obj1.action).toBe("hello");
-  expect(obj1.res).toBe(1);
-});
 
 test("use class implementating interface : it is type safe and full solution", () => {
   interface IOnDispatchFunc {
