@@ -1,6 +1,5 @@
 import { test, expect, vi } from "vitest";
 import { OnDispatchResult } from "../src/types/types";
-import { IOnDispatchResult } from "../src/types/i-on-dispatch-result";
 
 test("function type with few argument ---> is not type safe", () => {
   // --- func is of type OnDispatchResult but missing one argument
@@ -28,8 +27,13 @@ test("use class implementating interface : it is type safe and full solution", (
     operate(res: unknown, action: string): void; // type OnDispatchResult
   }
   class AAA implements IOnDispatchFunc {
-    operate(res: unknown, action: string): void {
-      console.log(res, action);
+    // --- i can use one argument without problem at all so this class solution is not good
+    // operate(res: unknown, action: string): void {
+    //   console.log(res, action);
+    // }
+    // --- this is wrong but no protection from typescript
+    operate(res: unknown): void {
+      console.log(res);
     }
   }
 

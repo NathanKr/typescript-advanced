@@ -54,7 +54,7 @@ function makeObj(n: INewableWithString) {
     expect(expected).toBe(val.name)
 ```    
 
-<h3>Function as type is bad use class implementaing interface instead</h3>
+<h3>Function as type is bad </h3>
 This is bad
 
 ```ts
@@ -65,15 +65,21 @@ This is bad
   };
 ```
 
-This is good
+This is also bad
 
 ```ts
 interface IOnDispatchFunc {
     operate(res: unknown, action: string): void; // type OnDispatchResult
   }
+
   class AAA implements IOnDispatchFunc {
-    operate(res: unknown, action: string): void {
-      console.log(res, action);
+    // --- i can use one argument without problem at all so this class solution is not good
+    // operate(res: unknown, action: string): void {
+    //   console.log(res, action);
+    // }
+    // --- this is wrong but no protection from typescript
+    operate(res: unknown): void {
+      console.log(res);
     }
   }
 
