@@ -5,6 +5,7 @@ import ICallable from "../src/types/i-callable";
 
 test("ICallable is ok with string", () => {
   const overloaded: ICallable = stringOrNumber;
+  
 
   const expected = 'hello 123';
   const actual = overloaded("123");
