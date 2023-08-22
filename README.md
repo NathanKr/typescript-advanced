@@ -54,7 +54,7 @@ function makeObj(n: INewableWithString) {
     expect(expected).toBe(val.name)
 ```    
 
-<h3>Function as type is bad </h3>
+<h3>Function as type is bad because typescript does not inforace the argument </h3>
 This is bad
 
 ```ts
@@ -65,7 +65,7 @@ This is bad
   };
 ```
 
-This is also bad
+Using class and interface does not solve the issue
 
 ```ts
 interface IOnDispatchFunc {
